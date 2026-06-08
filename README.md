@@ -1,31 +1,51 @@
 # tableau-dashboard-governance-auditor
 
-Board-readable Kinetic Gain proof repo for **Tableau** signal coverage.
+Board-readable Kinetic Gain proof repo for **Tableau** platform and company signal coverage.
 
-## Signal lane
+## Product thesis
 
-- Vendor / platform: Tableau
-- Domain: BI / Analytics
-- Executive question: Where is this system creating exposure, waste, or decision latency?
-- Proof posture: synthetic fixture, deterministic CLI, static report, and CI gate.
+Dashboards lose trust when certified sources, metric definitions, refresh health, and ownership are unclear.
 
-## Why this exists
+This repo turns that problem into a small, inspectable product surface: synthetic fixture data, a deterministic CLI, a tested scoring model, a JSON report, and a static brief that explains the business and technical value of the signal.
 
-Dashboard governance, workbook ownership, metric lineage, and adoption risk evidence.
+## Buyer and operator fit
 
-This repo is intentionally small and explicit. It gives the portfolio atlas a named, inspectable proof artifact for Tableau without needing another hosted subdomain or exposing live customer data.
+- **Primary audience:** Analytics leaders, revenue operations, BI owners, and board-reporting teams
+- **Signal domain:** BI / Analytics
+- **Executive question:** Where is this system creating exposure, waste, or decision latency?
+- **Product motion:** The product checks dashboard ownership, source certification, metric lineage, refresh reliability, and decision readiness.
+- **Value architecture:** Leaders can decide which reports can support board narratives and which require remediation before use.
+
+## What this repo proves
+
+- **Normalize:** messy Tableau operating evidence is represented as explicit lanes.
+- **Score:** risk and evidence depth are measured separately so weak proof is not hidden by high urgency.
+- **Route:** each lane has an owner and next action instead of a vague status.
+- **Package:** CLI output, tests, JSON report, and static page all tell the same board-ready story.
+
+## Integration boundary
+
+Focus area: Tableau workbooks, data sources, extracts, owner metadata, certification flags, and refresh events.
+
+This is synthetic proof only. It does not connect to live Tableau tenants, call private APIs, store secrets, publish credentials, or expose customer data.
 
 ## Local run
 
-`ash
+```bash
 npm install
 npm test
 npm run build
 npm run demo
-`
+```
 
-## Security posture
+## Public surface
 
-- No secrets, tokens, customer records, or live API calls.
-- Fixture data is synthetic and stored in ixtures/sample.json.
-- Output is deterministic and safe for public portfolio inspection.
+The generated site is in `site/index.html`. The data report is in `site/report.json`.
+
+## Keywords
+
+- Tableau
+- BI governance
+- dashboard trust
+- metric lineage
+- certified sources
